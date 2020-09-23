@@ -1,18 +1,16 @@
-package com.example.WeatherWebApp.Service;
+package com.example.WeatherWebApp.service;
 
-import com.example.WeatherWebApp.Service.TemperatureService;
 import com.example.WeatherWebApp.dto.WeatherDto;
-import com.example.WeatherWebApp.model.WeatherInformation;
+import com.example.WeatherWebApp.dto.weather_api.WeatherInformation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
 public class WeatherService {
 
-    TemperatureService temperatureService;
+    private final TemperatureService temperatureService;
 
     @Autowired
     public WeatherService(TemperatureService temperatureService){
