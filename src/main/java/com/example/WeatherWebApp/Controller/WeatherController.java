@@ -10,10 +10,14 @@ import java.util.List;
 @RestController
 public class WeatherController {
 
-    @Autowired
     WeatherService weatherService;
-    @Autowired
     TemperatureRepo temperatureRepo;
+
+    @Autowired
+    public WeatherController(WeatherService weatherService, TemperatureRepo temperatureRepo){
+        this.weatherService = weatherService;
+        this.temperatureRepo = temperatureRepo;
+    }
 
 
     @GetMapping("/weather/{city}")
