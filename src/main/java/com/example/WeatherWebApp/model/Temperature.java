@@ -1,15 +1,12 @@
-package com.example.WeatherWebApp.DB;
+package com.example.WeatherWebApp.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.time.Instant;
 
 @Entity
 @Data
-@AllArgsConstructor
 @Table(name = "temperature")
 public class Temperature {
 

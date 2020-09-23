@@ -1,5 +1,5 @@
 
-package com.example.WeatherWebApp.model;
+package com.example.WeatherWebApp.dto.weather_api;
 
 import java.util.HashMap;
 import java.util.List;

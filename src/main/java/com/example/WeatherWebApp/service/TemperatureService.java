@@ -1,8 +1,8 @@
-package com.example.WeatherWebApp.Service;
+package com.example.WeatherWebApp.service;
 
-import com.example.WeatherWebApp.TempConverter;
-import com.example.WeatherWebApp.DB.Temperature;
-import com.example.WeatherWebApp.Repository.TemperatureRepo;
+import com.example.WeatherWebApp.utils.TempConverter;
+import com.example.WeatherWebApp.model.Temperature;
+import com.example.WeatherWebApp.repository.TemperatureRepo;
 import com.example.WeatherWebApp.dto.WeatherDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class TemperatureService {
 
-    TemperatureRepo temperatureRepo;
+    private final TemperatureRepo temperatureRepo;
 
     @Autowired
     public TemperatureService(TemperatureRepo temperatureRepo) {
@@ -20,10 +20,9 @@ public class TemperatureService {
 
     public Temperature saveTemperature(WeatherDto weatherDto){
 
-        TempConverter tc = new TempConverter();
         return temperatureRepo.save(new Temperature(weatherDto.getCityName(),
-                tc.convertToCelcius((weatherDto.getTemp())),
-                tc.convertToCelcius(weatherDto.getFeelsLikeTemp())));
+                TempConverter.convertToCelcius((weatherDto.getTemp())),
+                TempConverter.convertToCelcius(weatherDto.getFeelsLikeTemp())));
 
     }
 

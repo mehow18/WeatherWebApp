@@ -1,6 +1,6 @@
-package com.example.WeatherWebApp.Repository;
+package com.example.WeatherWebApp.repository;
 
-import com.example.WeatherWebApp.DB.Temperature;
+import com.example.WeatherWebApp.model.Temperature;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
